@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@using(Html.BeginForm("Index", "Home", FormMethod.Post))
+{
+    <input type="text" name="inputText"/>
+    <input type="submit" value="GenerateQR"/>
+}
+
+<hr/>
+
+@if(@ViewBag.QRCode !=null)
+{
+    <img src="@ViewBag.QRCode" style="width:400px; height =400px;" />
+}
